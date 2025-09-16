@@ -1,0 +1,345 @@
+/* src/main/webapp/css/style.css */
+
+/* --- Biến màu và Font chữ --- */
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #50E3C2;
+    --dark-color: #2c3e50;
+    --light-color: #ffffff;
+    --gray-color: #f8f9fa;
+    --text-color: #34495e;
+    --border-color: #e0e6ed;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --border-radius: 8px;
+    --font-family: 'Inter', sans-serif;
+}
+
+/* --- Thiết lập cơ bản --- */
+body {
+    font-family: var(--font-family);
+    background-color: var(--gray-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 70px; /* Thêm padding để nội dung không bị header che khuất */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* --- Card (Thẻ) --- */
+.card {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+    overflow: hidden; /* Đảm bảo các góc bo được áp dụng */
+}
+
+.card-header {
+    padding: 1.5rem;
+    background-color: #fdfdff;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.page-subtitle {
+    margin: 0.25rem 0 0;
+    color: #718096;
+    font-size: 0.95rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* --- Navbar (thanh điều hướng đã có trong decorator) --- */
+/* Bỏ qua vì đã dùng Bootstrap trong decorator, chỉ style lại nếu cần */
+
+
+/* --- Bảng (Table) --- */
+.table-container {
+    overflow-x: auto;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.styled-table thead tr {
+    background-color: #f1f5f9;
+    color: #4a5568;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.styled-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f7fafc;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.styled-table strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* --- Icon và hình ảnh trong bảng --- */
+.category-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.no-image-placeholder {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e2e8f0;
+    color: #718096;
+    border-radius: var(--border-radius);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* --- Nút (Button) --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+    color: var(--light-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+    color: white;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+}
+
+/* --- Form --- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* --- Trang Login --- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.login-container .card {
+    width: 100%;
+    max-width: 450px;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: var(--danger-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+    border: 1px solid #f5c6cb;
+}
+
+/* --- Trang Error --- */
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+.error-icon {
+    font-size: 4rem;
+}
+.error-title {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+}
+
+/* --- Các thành phần khác --- */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+}
+.search-form input {
+    min-width: 250px;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.actions a {
+    text-decoration: none;
+    color: var(--primary-color);
+    margin-right: 1.5rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.actions a:hover {
+    color: var(--dark-color);
+}
+.actions a:last-child {
+    margin-right: 0;
+    color: var(--danger-color);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: #718096;
+}
+
+.empty-state-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.category-card {
+    background-color: var(--light-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.category-card-icon-wrapper {
+    margin-bottom: 1rem;
+}
+
+.category-card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Bo tròn hình ảnh */
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.category-card-placeholder {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-color);
+    border-radius: 50%;
+}
+
+.category-card-placeholder span {
+    font-size: 2.5rem;
+}
+
+.category-card-info {
+    margin-top: 1rem;
+}
+
+.category-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+    color: var(--dark-color);
+}
+
+.category-card-id {
+    font-size: 0.85rem;
+    color: #718096;
+    margin: 0;
+}
